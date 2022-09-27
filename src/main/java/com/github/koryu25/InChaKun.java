@@ -19,9 +19,9 @@ public class InChaKun {
 
     public void awaitInput() {
         System.out.println("コマンドを入力してください:");
-        String command = scanner.next();
+        String input = scanner.next();
 
-        if (command.equalsIgnoreCase("stop")) {
+        if (input.equalsIgnoreCase("stop")) {
             bot.stop();
         } else {
             System.out.println("無効なコマンドが入力されました。");
