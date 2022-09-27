@@ -1,6 +1,6 @@
 package com.github.koryu25.discord;
 
-import com.github.koryu25.InChaKun;
+import com.github.koryu25.inchakun.InChaKun;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;

@@ -1,4 +1,4 @@
-package com.github.koryu25;
+package com.github.koryu25.inchakun;
 
 import com.github.koryu25.discord.Bot;
 import lombok.Getter;
