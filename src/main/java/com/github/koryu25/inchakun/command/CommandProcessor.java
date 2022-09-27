@@ -1,8 +1,12 @@
 package com.github.koryu25.inchakun.command;
 
-import com.github.koryu25.inchakun.command.Command;
-
 public interface CommandProcessor {
 
+    String command();
+
     void run(Command command);
+
+    default boolean actionable(String text) {
+        return command().equals(text);
+    }
 }
