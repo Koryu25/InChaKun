@@ -1,11 +1,13 @@
 package com.github.koryu25;
 
 import com.github.koryu25.discord.Bot;
+import lombok.Getter;
 
 import java.util.Scanner;
 
 public class InChaKun {
 
+    @Getter
     private Bot bot;
 
     private final Scanner scanner = new Scanner(System.in);
