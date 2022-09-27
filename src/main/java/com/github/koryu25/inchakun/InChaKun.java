@@ -13,19 +13,16 @@ public class InChaKun {
     public static InChaKun instance;
 
     @Getter
-    private Bot bot;
+    private final Bot bot = new Bot();
 
-    private CommandManager commandManager;
+    private final CommandManager commandManager = new CommandManager();
 
     public InChaKun() {
         instance = this;
 
         System.out.println("Starting InChaKun...");
 
-        bot = new Bot();
         bot.run();
-
-        commandManager = new CommandManager();
     }
 
     public void awaitInput() {
