@@ -27,7 +27,7 @@ public class InChaKun {
 
     public void awaitInput() {
         System.out.println("コマンドを入力してください:");
-        String input = new Scanner(System.in).next();
+        String input = new Scanner(System.in).nextLine();
 
         if (input.equalsIgnoreCase("stop")) {
             bot.stop();
