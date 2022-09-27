@@ -13,7 +13,7 @@ public class Bot {
     private JDA jda;
     private Guild inChaGuru;
 
-    public void run(InChaKun inChaKun) {
+    public void run() {
         jda = JDABuilder.createDefault(TOKEN)
                 .setActivity(Activity.playing("陰キャグル"))
                 .build();
@@ -22,7 +22,7 @@ public class Bot {
 
         try {
             jda.awaitReady();
-            inChaKun.awaitInput();
+            InChaKun.instance.awaitInput();
 
         } catch (InterruptedException e) {
             e.printStackTrace();

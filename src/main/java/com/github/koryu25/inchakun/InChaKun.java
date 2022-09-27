@@ -7,16 +7,20 @@ import java.util.Scanner;
 
 public class InChaKun {
 
+    public static InChaKun instance;
+
     @Getter
     private Bot bot;
 
     private final Scanner scanner = new Scanner(System.in);
 
     public InChaKun() {
+        instance = this;
+
         System.out.println("Starting InChaKun...");
 
         bot = new Bot();
-        bot.run(this);
+        bot.run();
     }
 
     public void awaitInput() {
