@@ -6,7 +6,7 @@ public interface CommandProcessor {
 
     void run(Command command);
 
-    default boolean actionable(String text) {
+    default boolean match(String text) {
         return command().equals(text);
     }
 }
