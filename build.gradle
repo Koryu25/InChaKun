@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'com.github.koryu25'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation('net.dv8tion:JDA:5.0.0-alpha.20')
+}
+
+shadowJar {
+    exclude('org.junit.jupiter:junit-jupiter-api:5.7.0')
+    exclude('org.junit.jupiter:junit-jupiter-engine:5.7.0')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.koryu25.Main'
+    }
+}
