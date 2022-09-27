@@ -17,7 +17,7 @@ public class InChaKun {
         bot.run(this);
     }
 
-    public void waitInput() {
+    public void awaitInput() {
         System.out.println("コマンドを入力してください:");
         String command = scanner.next();
 
@@ -25,7 +25,7 @@ public class InChaKun {
             bot.stop();
         } else {
             System.out.println("無効なコマンドが入力されました。");
-            waitInput();
+            awaitInput();
         }
     }
 }

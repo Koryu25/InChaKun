@@ -22,7 +22,7 @@ public class Bot {
 
         try {
             jda.awaitReady();
-            inChaKun.waitInput();
+            inChaKun.awaitInput();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
