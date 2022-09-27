@@ -14,10 +14,10 @@ public class Command {
     @Getter
     private final List<String> args;
 
-    public Command(String originalCommand) {
-        List<String> contents = new ArrayList<>(Arrays.asList(originalCommand.split(" ")));
+    public Command(String text) {
+        List<String> contents = new ArrayList<>(Arrays.asList(text.split(" ")));
         this.command = contents.get(0);
-        contents.remove(command);
+        contents.remove(0);
         this.args = contents;
     }
 }
