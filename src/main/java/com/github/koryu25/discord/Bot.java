@@ -1,6 +1,7 @@
 package com.github.koryu25.discord;
 
 import com.github.koryu25.inchakun.InChaKun;
+import lombok.Getter;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -10,6 +11,7 @@ public class Bot {
 
     private final String TOKEN = "ODkzNzE2MzM1NzQ4NjEyMTA3.GNUdsP.518_O2XjUzRvIhuXs8OS_gPlwtx4oKp9OtM9lo";
 
+    @Getter
     private JDA jda;
     private Guild inChaGuru;
 
