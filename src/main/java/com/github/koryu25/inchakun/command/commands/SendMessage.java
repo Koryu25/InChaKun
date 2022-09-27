@@ -41,6 +41,6 @@ public class SendMessage implements CommandProcessor {
         }
 
         // メッセージ送信
-        textChannel.sendMessage(MessageCreateData.fromContent(message));
+        textChannel.sendMessage(message);
     }
 }
