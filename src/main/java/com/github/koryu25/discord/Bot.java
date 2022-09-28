@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot {
 
@@ -18,10 +19,13 @@ public class Bot {
 
     public void run() {
         jda = JDABuilder.createDefault(TOKEN)
-                .setActivity(Activity.listening("ping"))
+                .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
+                .setActivity(Activity.playing("Type /ping"))
                 //.setActivity(Activity.playing("陰キャグル"))
                 .addEventListeners(new Listener())
                 .build();
+
+        jda.upsertCommand("ping", "Calculate ping of the bot").queue();
 
         try {
             jda.awaitReady();
