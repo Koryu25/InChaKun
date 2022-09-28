@@ -13,6 +13,7 @@ public class Bot {
 
     @Getter
     private JDA jda;
+    @Getter
     private Guild inChaGuru;
 
     public void run() {
@@ -20,10 +21,15 @@ public class Bot {
                 .setActivity(Activity.playing("陰キャグル"))
                 .build();
 
-        inChaGuru = jda.getGuildById(837323905840185405L);
-
         try {
             jda.awaitReady();
+
+            inChaGuru = jda.getGuildById("837323905840185405");
+            if (inChaGuru == null)
+                System.out.println("陰キャグルインスタンスがnullです");
+            else
+                System.out.println("陰キャグルの取得に成功しました");
+
             InChaKun.instance.awaitInput();
 
         } catch (InterruptedException e) {
