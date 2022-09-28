@@ -18,7 +18,9 @@ public class Bot {
 
     public void run() {
         jda = JDABuilder.createDefault(TOKEN)
-                .setActivity(Activity.playing("陰キャグル"))
+                .setActivity(Activity.listening("ping"))
+                //.setActivity(Activity.playing("陰キャグル"))
+                .addEventListeners(new Listener())
                 .build();
 
         try {
