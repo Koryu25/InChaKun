@@ -4,9 +4,8 @@ import com.github.koryu25.discord.DefaultChannel;
 import com.github.koryu25.inchakun.InChaKun;
 import com.github.koryu25.inchakun.command.Command;
 import com.github.koryu25.inchakun.command.CommandProcessor;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.utils.messages.MessageCreateData;
-import org.w3c.dom.Text;
 
 /**
  * チャンネルにメッセージを送信します
@@ -32,12 +31,24 @@ public class SendMessage implements CommandProcessor {
         if (channel == null) {
             System.out.println("チャンネル名が間違っています");
         }
-        TextChannel textChannel = InChaKun.instance.getBot().getJda().getTextChannelById(channel.getId());
+        TextChannel textChannel = InChaKun.instance
+                .getBot()
+                .getInChaGuru().getTextChannelById(channel.getId());
+        if (textChannel == null) {
+            System.out.println("チャンネルがnullです");
+            return;
+        }
 
         // メッセージ形成
         String message = "";
         for (int i = 1; i > command.getArgs().size(); i++) {
             message = message + command.getArgs().get(i);
+        }
+
+        // 権限を確認
+        if (!textChannel.getGuild().getSelfMember().hasPermission(textChannel, Permission.MESSAGE_SEND)) {
+            System.out.println("権限がありません");
+            return;
         }
 
         // メッセージ送信
