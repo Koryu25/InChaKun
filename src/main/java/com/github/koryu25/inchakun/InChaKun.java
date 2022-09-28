@@ -30,6 +30,7 @@ public class InChaKun {
         String input = new Scanner(System.in).nextLine();
 
         if (input.equalsIgnoreCase("stop")) {
+            System.out.println("陰キャくんを終了します...");
             bot.stop();
         } else {
             // コマンドの形成
