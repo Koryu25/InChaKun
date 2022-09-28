@@ -30,6 +30,7 @@ public class SendMessage implements CommandProcessor {
         DefaultChannel channel = DefaultChannel.fromJp(command.getArgs().get(0));
         if (channel == null) {
             System.out.println("チャンネル名が間違っています");
+            return;
         }
         TextChannel textChannel = InChaKun.instance
                 .getBot()
@@ -41,7 +42,7 @@ public class SendMessage implements CommandProcessor {
 
         // メッセージ形成
         String message = "";
-        for (int i = 1; i > command.getArgs().size(); i++) {
+        for (int i = 1; i < command.getArgs().size(); i++) {
             message = message + command.getArgs().get(i);
         }
 
@@ -52,6 +53,6 @@ public class SendMessage implements CommandProcessor {
         }
 
         // メッセージ送信
-        textChannel.sendMessage(message);
+        textChannel.sendMessage(message).queue();
     }
 }
