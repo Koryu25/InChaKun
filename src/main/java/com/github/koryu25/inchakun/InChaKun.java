@@ -17,12 +17,12 @@ public class InChaKun {
 
     private final CommandManager commandManager = new CommandManager();
 
-    public InChaKun() {
+    public InChaKun(String botToken) {
         instance = this;
 
         System.out.println("Starting InChaKun...");
 
-        bot.run();
+        bot.run(botToken);
     }
 
     public void awaitInput() {

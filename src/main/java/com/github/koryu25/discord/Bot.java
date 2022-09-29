@@ -10,15 +10,14 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot {
 
-    private final String TOKEN = "ODkzNzE2MzM1NzQ4NjEyMTA3.GNUdsP.518_O2XjUzRvIhuXs8OS_gPlwtx4oKp9OtM9lo";
-
     @Getter
     private JDA jda;
+
     @Getter
     private Guild inChaGuru;
 
-    public void run() {
-        jda = JDABuilder.createDefault(TOKEN)
+    public void run(String token) {
+        jda = JDABuilder.createDefault(token)
                 .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                 .setActivity(Activity.playing("Type /ping"))
                 //.setActivity(Activity.playing("陰キャグル"))
