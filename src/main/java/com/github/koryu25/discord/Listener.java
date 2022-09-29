@@ -1,5 +1,7 @@
 package com.github.koryu25.discord;
 
+import com.github.koryu25.ai.ChatBot;
+import com.github.koryu25.inchakun.InChaKun;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -15,6 +17,12 @@ public class Listener extends ListenerAdapter {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("Pong!")
                     .queue();
+        }
+
+        // chat bot
+        if (!event.getMember().getId().equals(InChaKun.instance.getBot().getId())) {
+            if (event.getChannel().getId().equals("944386244845109258"))
+                ChatBot.chat(message, message.getContentDisplay());
         }
     }
 

@@ -21,6 +21,8 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     implementation('net.dv8tion:JDA:5.0.0-alpha.20')
+
+    implementation('com.google.code.gson:gson:2.9.1')
 }
 
 shadowJar {
@@ -28,6 +30,8 @@ shadowJar {
     exclude('org.junit.jupiter:junit-jupiter-engine:5.7.0')
 
     exclude('org.projectlombok:lombok:1.18.24')
+
+    exclude('com.google.code.gson:gson:2.9.1')
 }
 
 test {

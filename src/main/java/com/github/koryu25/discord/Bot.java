@@ -14,6 +14,9 @@ public class Bot {
     private JDA jda;
 
     @Getter
+    private String id;
+
+    @Getter
     private Guild inChaGuru;
 
     public void run(String token) {
@@ -34,6 +37,8 @@ public class Bot {
                 System.out.println("陰キャグルインスタンスがnullです");
             else
                 System.out.println("陰キャグルの取得に成功しました");
+
+            id = jda.getSelfUser().getId();
 
             InChaKun.instance.awaitInput();
 
